@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+   "dev": "next dev --turbopack",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "postinstall": "npm rebuild lightningcss"
   },
   "dependencies": {
+    "lightningcss": "^1.29.3",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
