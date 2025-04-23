@@ -1,14 +1,10 @@
 // app/page.tsx (or any other page or component)
 'use client';
 
-import Button from '@/components/Button';
 import React from 'react';
 import Image from 'next/image';
 
 const HomePage: React.FC = () => {
-  const handleButtonClick = () => {
-    alert('Button clicked!');
-  };
 
   return (
     <div className="min-h-screen bg-white text-gray-800 px-6 py-12">
