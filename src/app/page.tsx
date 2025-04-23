@@ -1,29 +1,23 @@
 'use client';
 
+import Navbar from '@/components/Navbar';
 import TypingText from '@/components/TypingText';
 import Link from 'next/link';
 import React from 'react';
 
 const HomePage = () => {
+
+  // Define dynamic menu items
+  const menuItems = [
+    { name: 'Home', link: '/' },
+    { name: 'About', link: '/about' },
+    { name: 'Contact', link: '/contact' },
+    // Add more items as needed
+  ];
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
       {/* Navbar */}
-      <header className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-blue-600">MySite</h1>
-          <nav className="space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-blue-600">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600">
-              About
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar menuItems={menuItems} />
 
       {/* Hero Section */}
       <main className="flex flex-col justify-center items-center text-center py-24 px-4">

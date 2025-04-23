@@ -3,10 +3,18 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Navbar from '@/components/Navbar';
 
 const HomePage: React.FC = () => {
-
+ // Define dynamic menu items
+ const menuItems = [
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
+  { name: 'Contact', link: '/contact' },
+  // Add more items as needed
+];
   return (
+    <><Navbar menuItems={menuItems} />
     <div className="min-h-screen bg-white text-gray-800 px-6 py-12">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 border-b pb-2">About Us</h1>
@@ -45,6 +53,7 @@ const HomePage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
