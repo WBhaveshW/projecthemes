@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   css: {
-    lightningcss: true,
+    lightningcss: false,
   },
 };
 
