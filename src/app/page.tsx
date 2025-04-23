@@ -1,5 +1,6 @@
 'use client';
 
+import TypingText from '@/components/TypingText';
 import Link from 'next/link';
 import React from 'react';
 
@@ -27,7 +28,14 @@ const HomePage = () => {
       {/* Hero Section */}
       <main className="flex flex-col justify-center items-center text-center py-24 px-4">
         <h2 className="text-4xl font-bold mb-4 whitespace-nowrap border-r-4 border-blue-600 animate-typing overflow-hidden">
-  Welcome to MySite
+        <TypingText
+        staticText="Hi, I’m "
+        texts={['Bhavesh 👨‍💻', 'a Fullstack Developer 💻', 'a Tech Blogger ✍️ who writes tutorials for devs']}
+        variant="heading"
+        color="text-purple-700"
+        speed={90}
+        delay={1600}
+      />
 </h2>
 
         <p className="text-lg text-gray-600 max-w-xl">
