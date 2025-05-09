@@ -1,13 +1,8 @@
 // /app/blog/[slug]/page.tsx
 
-import React from 'react';
 import { blogPosts } from '@/app/data/blogPosts';
 import { notFound } from 'next/navigation';
 import SEO from '@/components/SEO';
-
-interface BlogPageProps {
-  params: { slug: string };
-}
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -15,7 +10,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: BlogPageProps) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) return notFound();
