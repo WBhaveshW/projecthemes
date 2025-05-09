@@ -4,13 +4,17 @@ import { blogPosts } from '@/app/data/blogPosts';
 import { notFound } from 'next/navigation';
 import SEO from '@/components/SEO';
 
+type Props = {
+  params: { slug: string };
+};
+
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: Props) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) return notFound();

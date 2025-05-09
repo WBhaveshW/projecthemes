@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['projecthemes.vercel.app'], // only if needed
   },
+  reactStrictMode: true,
+  experimental: {
+    serverActions: true,
+  },
 };
 
 export default nextConfig;
