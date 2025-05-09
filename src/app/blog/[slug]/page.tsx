@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: BlogPageProps) {
+export default async function BlogPostPage({ params }: BlogPageProps) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) return notFound();
@@ -23,15 +23,14 @@ export default function BlogPostPage({ params }: BlogPageProps) {
   return (
     <article className="max-w-3xl mx-auto p-6 prose">
       <SEO
-  title={post.title}
-  description={post.description}
-  url={`https://yoursite.com/blog/${post.slug}`}
-  datePublished={post.date}
-  image={post.image}
-  authorName={post.author}
-  keywords={post.keywords}
-/>
-
+        title={post.title}
+        description={post.description}
+        url={`https://yoursite.com/blog/${post.slug}`}
+        datePublished={post.date}
+        image={post.image}
+        authorName={post.author}
+        keywords={post.keywords}
+      />
 
       <h1 className="text-4xl font-bold mb-2">{post.title}</h1>
       <p className="text-gray-600 text-sm">
