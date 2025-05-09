@@ -31,7 +31,6 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
         authorName={post.author}
         keywords={post.keywords}
       />
-
       <h1 className="text-4xl font-bold mb-2">{post.title}</h1>
       <p className="text-gray-600 text-sm">
         By {post.author} • {new Date(post.date).toLocaleDateString()}
