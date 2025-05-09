@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
 
           <div className="w-full h-64 relative rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="/472998841_18391668016097239_4160982039699515104_n.jpg" // Replace with your image in public/
+              src="/images/472998841_18391668016097239_4160982039699515104_n.jpg" // Replace with your image in public/
               alt="About us illustration"
               fill
               className="object-cover"
