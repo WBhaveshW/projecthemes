@@ -14,8 +14,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+type Params = Promise<{ slug: string[] }>;
+
+export default async function BlogPostPage({ params }: { params: Params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => typeof slug === "string" && p.slug === slug);
 
   if (!post) return notFound();
 
