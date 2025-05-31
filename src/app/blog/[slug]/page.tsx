@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import SEO from '@/components/SEO';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -14,9 +14,7 @@ export async function generateStaticParams() {
   }));
 }
 
-type Params = Promise<{ slug: string[] }>;
-
-export default async function BlogPostPage({ params }: { params: Params }) {
+export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = blogPosts.find((p) => typeof slug === "string" && p.slug === slug);
 
