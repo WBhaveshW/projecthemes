@@ -14,7 +14,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage(props: Props) {
+  const { params } =  props; // ✅ await props
+
   const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) return notFound();
@@ -39,3 +41,4 @@ export default async function BlogPostPage({ params }: Props) {
     </article>
   );
 }
+

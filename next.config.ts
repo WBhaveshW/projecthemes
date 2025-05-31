@@ -1,15 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  css: {
-    lightningcss: true,
-  },
-  images: {
-    domains: ['projecthemes.vercel.app'], // only if needed
-  },
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'projecthemes.vercel.app',
+      },
+    ],
+  },
   experimental: {
-    serverActions: true,
+    serverActions: {},
   },
 };
 
